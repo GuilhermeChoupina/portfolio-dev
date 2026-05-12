@@ -696,11 +696,6 @@ button {
   margin-bottom: 16px;
 }
 
-.link-portfólio {
-  color: var(--accent1);
-  font-weight: 700;
-}
-
 .contato {
   background: var(--bg);
   padding: 80px 0;
