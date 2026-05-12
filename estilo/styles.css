@@ -152,9 +152,11 @@ button {
 .menu-móvel {
   display: none;
   position: fixed;
-  inset: 70px 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #162339;
-  padding: 24px;
+  padding: 88px 24px 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 999;
 }
