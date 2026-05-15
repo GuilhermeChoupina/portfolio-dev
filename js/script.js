@@ -131,7 +131,7 @@ function enviarWhatsapp() {
     const mensagem = document.getElementById('mensagem').value.trim();
 
     // Construção da mensagem para WhatsApp
-    const whatsappMessage = `Fala ai Gui beleza !? ` + `\n\n\n- Meu nome é: ${nome}` + `\n- Meu email é: ${email}` + `\n- Gostaria de: ${mensagem}` + `\n\nVamos conversar sobre este projeto ?`;
+    const whatsappMessage = `Fala ai Gui beleza !? ` + `\n\n- Meu nome é: ${nome}` + `\n- Meu email é: ${email}` + `\n- Projeto: ${mensagem}` + `\n\nVamos conversar sobre este projeto ?`;
 
     // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/5511954607586?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
