@@ -125,6 +125,18 @@ if (formulárioContato) {
     });
 }
 
+function enviarWhatsapp() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    // Construção da mensagem para WhatsApp
+    const whatsappMessage = `Fala ai Gui beleza !? ` + `\n\n\n- Meu nome é: ${nome}` + `\n- Meu email é: ${email}` + `\n- Gostaria de: ${mensagem}` + `\n\nVamos conversar sobre este projeto ?`;
+
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/5511954607586?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+}
+
 // ---- SMOOTH SCROLL for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
