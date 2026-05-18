@@ -12,16 +12,15 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
 
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <link rel="stylesheet" href="estilo/styles.css" />
 </head>
 
 <body>
 
-    <!-- ===== NAVEGAÇÃO ===== -->
     <nav class="navegação" id="navegação">
-        <div class="logo-navegação">GF<span class="ponto">.</span></div>
+        <div class="logo-navegação"><a href="#início">GF</a><span class="ponto">.</span></div>
         <ul class="links-navegação">
             <li><a href="#início">Home</a></li>
             <li><a href="#sobre">Sobre</a></li>
@@ -36,7 +35,6 @@
         </button>
     </nav>
 
-    <!-- ===== MENU MÓVEL ===== -->
     <div class="menu-móvel" id="menuMóvel">
         <ul>
             <li><a href="#início" class="link-móvel">Home</a></li>
@@ -48,7 +46,6 @@
         </ul>
     </div>
 
-    <!-- ===== HERÓI ===== -->
     <section class="herói" id="início">
         <div class="formas-fundo-herói">
             <div class="forma forma-1"></div>
@@ -80,7 +77,6 @@
         </div>
     </section>
 
-    <!-- ===== SOBRE ===== -->
     <section class="sobre" id="sobre">
         <div class="contêiner sobre-grade">
             <div class="sobre-imagem reveal-left">
@@ -98,55 +94,36 @@
                 <span class="section-tag">Sobre Mim</span>
                 <h2 class="section-title">Desenvolvedor Full-Stack em formação</h2>
                 <p>
-                    Formado em Educação Física e estudante de Ciências da Computação, com foco em criar interfaces
+                    Estudante de Ciências da Computação, com foco em criar interfaces
                     limpas e funcionais.
                 </p>
                 <p>
-                    Desenvolvo projetos com HTML, CSS e JavaScript, buscando sempre boa usabilidade e organização.
+                    Desenvolvo projetos Web como landing pages, catálogos,portfólios e sistemas simples.
                 </p>
+                <p>Futuro desenvolvedor Mobile.</p>
+
                 <div class="barras-habilidades">
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>HTML</span><span>70%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-html" data-width="70"></div>
-                        </div>
+                    <div class="tech-item item-subir" title="HTML5">
+                        <i class="devicon-html5-plain"></i>
                     </div>
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>CSS</span><span>60%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-css" data-width="60"></div>
-                        </div>
+                    <div class="tech-item item-descer" title="CSS3">
+                        <i class="devicon-css3-plain"></i>
                     </div>
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>JavaScript</span><span>20%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-js" data-width="20"></div>
-                        </div>
+                    <div class="tech-item item-subir" title="JavaScript">
+                        <i class="devicon-javascript-plain"></i>
                     </div>
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>React</span><span>25%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-react" data-width="25"></div>
-                        </div>
+                    <div class="tech-item item-descer" title="React Native">
+                        <i class="devicon-react-plain"></i>
                     </div>
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>React Native</span><span>25%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-react-native" data-width="25"></div>
-                        </div>
-                    </div>
-                    <div class="item-habilidade">
-                        <div class="cabeçalho-habilidade"><span>Lógica de Programação</span><span>50%</span></div>
-                        <div class="barra-habilidade">
-                            <div class="preenchimento-habilidade skill-logic" data-width="50"></div>
-                        </div>
+                    <div class="tech-item item-subir" title="React">
+                        <i class="devicon-react-original"></i>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ===== HABILIDADES / SERVIÇOS ===== -->
     <section class="serviços" id="habilidades">
         <div class="contêiner">
             <span class="section-tag center reveal">O que eu faço</span>
@@ -159,7 +136,7 @@
                                 src="assets/img-skills/desenvolvimento-frontend.png" alt="desenvolvimento frontend"></i>
                     </div>
                     <h3>Front-End</h3>
-                    <p>Desenvolvimento de interfaces responsivas e acessíveis com HTML, CSS e JavaScript.</p>
+                    <p>Desenvolvimento de interfaces responsivas and acessíveis com HTML, CSS e JavaScript.</p>
                 </div>
                 <div class="cartão-serviço destaque reveal delay-2">
                     <div class="ícone-serviço"><i class="fas fa-mobile-alt"><img
@@ -183,54 +160,59 @@
         </div>
     </section>
 
-    <!-- ===== FORMAÇÃO ===== -->
     <section class="formação" id="formação">
         <div class="contêiner">
             <span class="section-tag center reveal">Trajetória</span>
             <h2 class="section-title center reveal delay-1">Ensino Superior &amp; Cursos</h2>
+
             <div class="linha-do-tempo">
 
                 <div class="item-linha-do-tempo reveal">
-                    <div class="ponto-linha-do-tempo"></div>
-                    <div class="cartão-linha-do-tempo">
-                        <span class="ano-linha-do-tempo">2019 – 2023</span>
-                        <h3>Bacharelado em Educação Física</h3>
-                        <p class="instituição-linha-do-tempo"><i class="fas fa-university"></i> Universidade Municipal
-                            de São Caetano
-                            do Sul (USCS)</p>
-                        <p>Base sólida em performance humana, comunicação e gestão de resultados.</p>
+                    <div class="ponto-linha-do-tempo ativo"></div>
+                    <div class="cartão-linha-do-tempo destacado">
+                        <span class="distintivo-linha-do-tempo">Cursando</span>
+                        <span class="ano-linha-do-tempo">2026 – 2030</span>
+                        <h3>Bacharelado em Ciências da Computação</h3>
+                        <p class="instituição-linha-do-tempo">
+                            <i class="fas fa-university"></i> Universidade São Judas Tadeu
+                        </p>
+                        <p>Formação técnica completa em desenvolvimento de software e sistemas.</p>
                     </div>
                 </div>
 
                 <div class="item-linha-do-tempo reveal delay-1">
                     <div class="ponto-linha-do-tempo"></div>
                     <div class="cartão-linha-do-tempo">
-                        <span class="ano-linha-do-tempo">2025</span>
-                        <h3>Lógica de Programação (Algoritmos)</h3>
-                        <p class="instituição-linha-do-tempo"><i class="fab fa-youtube"></i> Curso em Vídeo</p>
-                        <p>Fundamentos de algoritmos e raciocínio computacional.</p>
+                        <span class="ano-linha-do-tempo">2025 – 2026</span>
+                        <h3>HTML, CSS e JavaScript</h3>
+                        <p class="instituição-linha-do-tempo">
+                            <i class="fab fa-youtube"></i> Curso em Vídeo
+                        </p>
+                        <p>Desenvolvimento Front-End completo, do básico ao intermediário.</p>
                     </div>
                 </div>
 
                 <div class="item-linha-do-tempo reveal delay-2">
                     <div class="ponto-linha-do-tempo"></div>
                     <div class="cartão-linha-do-tempo">
-                        <span class="ano-linha-do-tempo">2025 – 2026</span>
-                        <h3>HTML, CSS e JavaScript</h3>
-                        <p class="instituição-linha-do-tempo"><i class="fab fa-youtube"></i> Curso em Vídeo</p>
-                        <p>Desenvolvimento Front-End completo, do básico ao intermediário.</p>
+                        <span class="ano-linha-do-tempo">2025</span>
+                        <h3>Lógica de Programação (Algoritmos)</h3>
+                        <p class="instituição-linha-do-tempo">
+                            <i class="fab fa-youtube"></i> Curso em Vídeo
+                        </p>
+                        <p>Fundamentos de algoritmos e raciocínio computacional.</p>
                     </div>
                 </div>
 
                 <div class="item-linha-do-tempo reveal delay-3">
-                    <div class="ponto-linha-do-tempo ativo"></div>
-                    <div class="cartão-linha-do-tempo destacado">
-                        <span class="distintivo-linha-do-tempo">Cursando</span>
-                        <span class="ano-linha-do-tempo">2026 – 2030</span>
-                        <h3>Bacharelado em Ciências da Computação</h3>
-                        <p class="instituição-linha-do-tempo"><i class="fas fa-university"></i> Universidade São Judas
-                            Tadeu</p>
-                        <p>Formação técnica completa em desenvolvimento de software e sistemas.</p>
+                    <div class="ponto-linha-do-tempo"></div>
+                    <div class="cartão-linha-do-tempo">
+                        <span class="ano-linha-do-tempo">2019 – 2023</span>
+                        <h3>Bacharelado em Educação Física</h3>
+                        <p class="instituição-linha-do-tempo">
+                            <i class="fas fa-university"></i> Universidade Municipal de São Caetano do Sul (USCS)
+                        </p>
+                        <p>Base sólida em performance humana, comunicação e gestão de resultados.</p>
                     </div>
                 </div>
 
@@ -238,7 +220,6 @@
         </div>
     </section>
 
-    <!-- ===== PORTFOLIO ===== -->
     <section class="portfólio" id="projetos">
         <div class="contêiner">
             <span class="section-tag center reveal">Trabalhos</span>
@@ -269,17 +250,18 @@
         </div>
     </section>
 
-    <!-- ===== CONTATO ===== -->
     <section class="contato" id="contato">
         <div class="contêiner grade-contato">
             <div class="texto-contato reveal-left">
                 <h2 class="section-title">Entre em Contato</h2>
                 <p>
-                    Tem uma pergunta ou quer saber mais sobre meus projetos? Envie uma mensagem! 
+                    Tem uma pergunta ou quer saber mais sobre meus projetos? Envie uma mensagem!
                     Responderei o mais breve possível.
                 </p>
                 <p>
-                    Você também pode me encontrar nas redes sociais ou enviar um <a href="https://wa.me/5511954607586?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20!" target="_blank" class="whatsapp">WhatsApp</a> direto.
+                    Você também pode me encontrar nas redes sociais ou enviar um <a
+                        href="https://wa.me/5511954607586?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20!"
+                        target="_blank" class="whatsapp">WhatsApp</a> direto.
                 </p>
             </div>
             <div class="formulário-contato reveal-right">
@@ -294,7 +276,8 @@
                     </div>
                     <div class="grupo-formulário">
                         <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" rows="5" placeholder="Conte-me brevemente sobre o que você deseja..." required></textarea>
+                        <textarea id="mensagem" rows="5" placeholder="Conte-me brevemente sobre o que você deseja..."
+                            required></textarea>
                     </div>
                     <button type="submit" class="botão-principal completo" onclick="enviarWhatsapp()">Enviar Mensagem <i
                             class="fas fa-paper-plane"></i></button>
@@ -306,14 +289,15 @@
         </div>
     </section>
 
-    <!-- ===== RODAPÉ ===== -->
     <footer class="rodapé">
         <div class="contêiner interno-rodapé">
             <div class="logo-rodapé">GF<span class="ponto">.</span></div>
             <p>&copy; 2026 Desenvolvido por Guilherme Fernandes Choupina - Desenvolvedor Full Stack.</p>
             <div class="social-rodapé">
-                <a href="https://github.com/guilhermechoupina" target="_blank"><i class="fab fa-github"></i><img src="assets/github.png" alt="GitHub"></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i><img src="assets/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/guilhermechoupina" target="_blank"><i class="fab fa-github"></i><img
+                        src="assets/github.png" alt="GitHub"></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i><img
+                        src="assets/linkedin.png" alt="LinkedIn"></a>
             </div>
         </div>
     </footer>
