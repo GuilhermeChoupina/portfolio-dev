@@ -390,7 +390,7 @@ button {
 .barras-habilidades {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 45px 25px;
+  gap: 40px 20px;
   margin-top: 40px;
   padding: 20px 10px;
   justify-items: center;
@@ -425,14 +425,6 @@ button {
   color: #26D9FD;
 }
 
-.item-subir {
-  transform: translateY(-12px);
-}
-
-.item-descer {
-  transform: translateY(12px);
-}
-
 .tech-item:hover {
   color: var(--accent2);
   opacity: 1;
@@ -441,10 +433,6 @@ button {
 
 .item-subir:hover {
   --hover-y: -12px;
-}
-
-.item-descer:hover {
-  --hover-y: 12px;
 }
 
 .serviços {
@@ -472,25 +460,12 @@ button {
 .ícone-serviço {
   width: 64px;
   height: 64px;
-  border-radius: 18px;
-  background: rgba(228, 166, 44, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 10px 0px;
   margin: 0 auto 20px;
   font-size: 1.35rem;
-  color: var(--accent1);
-}
-
-.cartão-serviço.destaque {
-  background: var(--accent1);
-  color: var(--text-dark);
-}
-
-.cartão-serviço.destaque .ícone-serviço {
-  background: rgba(255, 255, 255, 0.28);
-  color: var(--text-dark);
 }
 
 .cartão-serviço h3 {
@@ -551,19 +526,6 @@ button {
   border: 1px solid rgba(26, 39, 58, 0.08);
   transition: var(--transition);
 }
-
-.cartão-linha-do-tempo.destacado {
-  background: var(--accent1);
-  color: var(--text-dark);
-}
-
-.cartão-linha-do-tempo.destacado h3,
-.cartão-linha-do-tempo.destacado p,
-.cartão-linha-do-tempo.destacado .ano-linha-do-tempo,
-.cartão-linha-do-tempo.destacado .instituição-linha-do-tempo {
-  color: var(--text-dark);
-}
-
 
 .distintivo-linha-do-tempo {
   position: absolute;
@@ -993,7 +955,7 @@ button {
   }
 
   .linha-do-tempo {
-    padding-left: 20px;
+    padding-left: 32px;
     margin-top: 30px;
   }
 
@@ -1117,11 +1079,6 @@ button {
     font-size: 0.7rem;
   }
 
-  .barras-habilidades {
-    gap: 12px;
-    margin-top: 20px;
-  }
-
   .grade-serviços {
     gap: 16px;
   }
@@ -1177,7 +1134,7 @@ button {
   }
 
   .linha-do-tempo {
-    padding-left: 16px;
+    padding-left: 31px;
     margin-top: 24px;
   }
 
