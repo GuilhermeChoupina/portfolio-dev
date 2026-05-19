@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+section {
+  scroll-margin-top: 40px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -801,6 +805,17 @@ button {
 
 .social-rodapé a:hover {
   transform: scale(1.1);
+}
+
+.link-termos-footer {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.link-termos-footer:hover {
+  color: #e4a62c;
 }
 
 .reveal,

@@ -1,6 +1,3 @@
-/* ===================================================
-   GUILHERME CHOUPINA — PORTFOLIO JS
-   =================================================== */
 
 // ---- NAVEGAÇÃO SCROLL ----
 const navegação = document.getElementById('navegação');
@@ -72,7 +69,6 @@ const observerHabilidades = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const el = entry.target;
             const larguraAlvo = el.getAttribute('data-width') + '%';
-            // Pequeno atraso para a barra revelar ser visível
             setTimeout(() => {
                 el.style.width = larguraAlvo;
             }, 200);

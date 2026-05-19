@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    /* Mude para a fonte do seu portfólio */
+}
+
+body {
+    background-color: #0d0e12;
+    /* Um tom dark limpo */
+    color: #f3f4f6;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+.container-termos {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.topo-termos {
+    margin-bottom: 60px;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #e4a62c;
+    /* Cor de destaque/ouro */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    transform: translateX(-4px);
+}
+
+.topo-termos h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.topo-termos p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+/* Lista de Termos Estilizada */
+.conteudo-termos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.bloco-termo {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prefixo-termo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e4a62c;
+    /* Cor de destaque */
+    font-variant-numeric: tabular-nums;
+    padding-top: 4px;
+}
+
+.texto-termo h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.texto-termo p {
+    color: #d1d5db;
+    font-size: 1rem;
+}
+
+.texto-termo strong {
+    color: #ffffff;
+}
+
+.rodape-termos {
+    margin-top: 60px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rodape-termos p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+/* Responsividade Básica para Celular */
+@media (max-width: 600px) {
+    .bloco-termo {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .topo-termos h1 {
+        font-size: 2rem;
+    }
+}
