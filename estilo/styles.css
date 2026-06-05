@@ -885,6 +885,61 @@ button {
   filter: drop-shadow(0 8px 15px rgba(37, 211, 102, 0.4));
 }
 
+.bloco-aceite {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 0 0;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
+.bloco-aceite input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.bloco-aceite input[type="checkbox"]:checked {
+  background: #F5C842;
+  border-color: #F5C842;
+}
+
+.bloco-aceite input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.bloco-aceite label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.bloco-aceite label strong {
+  color: #fff;
+}
+
 @keyframes float {
 
   0%,

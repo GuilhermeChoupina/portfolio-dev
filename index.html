@@ -275,7 +275,7 @@
                 <form id="formulárioContato" novalidate>
                     <div class="grupo-formulário">
                         <label for="nome">Nome</label>
-                        <input type="text" id="nome" placeholder="Seu nome completo" required />
+                        <input type="text" id="nome" placeholder="Seu nome" required />
                     </div>
                     <div class="grupo-formulário">
                         <label for="email">Email</label>
@@ -286,10 +286,17 @@
                         <textarea id="mensagem" rows="5" placeholder="Conte-me brevemente sobre o que você deseja..."
                             required></textarea>
                     </div>
-                    <button type="submit" class="botão-principal completo" onclick="enviarWhatsapp()">Enviar Mensagem <i
+                    <button type="submit" class="botão-principal completo">Enviar Mensagem <i
                             class="fas fa-paper-plane"></i></button>
                     <div class="sucesso-formulário" id="sucessoFormulário">
                         <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso!
+                    </div>
+                    <div class="bloco-aceite">
+                        <input type="checkbox" id="aceite-termos" required/>
+                        <label for="aceite-termos">
+                            Li e concordo com as <strong>Diretrizes de Trabalho</strong> acima e estou ciente de todos
+                            os termos descritos.
+                        </label>
                     </div>
                 </form>
             </div>
@@ -301,7 +308,7 @@
             <div class="logo-rodapé">GF<span class="ponto">.</span></div>
             <p>&copy; 2026 Guilherme Fernandes Choupina - Desenvolvedor Full Stack.</p>
 
-            <!-- <a href="pages/termos.html" class="link-termos-footer">Diretrizes & Termos de Trabalho</a> -->
+            <a href="pages/termos.html" class="link-termos-footer">Diretrizes & Termos de Trabalho</a>
             <div class="social-rodapé">
                 <a href="https://github.com/guilhermechoupina" target="_blank"><i class="fab fa-github"></i><img
                         src="assets/github.png" alt="GitHub"></a>

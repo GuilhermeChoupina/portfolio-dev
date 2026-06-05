@@ -1,4 +1,3 @@
-
 // ---- NAVEGAÇÃO SCROLL ----
 const navegação = document.getElementById('navegação');
 window.addEventListener('scroll', () => {
@@ -81,56 +80,64 @@ preenchimentosHabilidades.forEach(fill => observerHabilidades.observe(fill));
 
 // ---- FORMULÁRIO CONTATO ----
 const formulárioContato = document.getElementById('formulárioContato');
-const sucessoFormulário = document.getElementById('sucessoFormulário');
 
 if (formulárioContato) {
-    formulárioContato.addEventListener('submit', (e) => {
+    formulárioContato.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
         const mensagem = document.getElementById('mensagem').value.trim();
+        const aceiteTermos = document.getElementById('aceite-termos');
 
-        if (!nome || !email || !mensagem) {
-            // Animação shake em campos faltando
-            [document.getElementById('nome'), document.getElementById('email'), document.getElementById('mensagem')].forEach(field => {
-                if (!field.value.trim()) {
-                    field.style.borderColor = '#C24D2C';
-                    field.style.animation = 'shake 0.4s ease';
-                    setTimeout(() => {
-                        field.style.animation = '';
-                        field.style.borderColor = '';
-                    }, 500);
-                }
-            });
-            return;
+        let válido = true;
+
+        [document.getElementById('nome'), document.getElementById('email'), document.getElementById('mensagem')].forEach(field => {
+            if (!field.value.trim()) {
+                válido = false;
+                field.style.borderColor = '#C24D2C';
+                field.style.animation = 'shake 0.4s ease';
+                setTimeout(() => {
+                    field.style.animation = '';
+                    field.style.borderColor = '';
+                }, 500);
+            }
+        });
+
+        if (!aceiteTermos.checked) {
+            válido = false;
+            aceiteTermos.style.outline = '2px solid #C24D2C';
+            setTimeout(() => aceiteTermos.style.outline = '', 500);
         }
 
-        // Simular sucesso
-        const btn = formulárioContato.querySelector('.botão-principal');
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
+        if (!válido) return;
 
-        setTimeout(() => {
-            formulárioContato.reset();
-            btn.innerHTML = 'Enviar Mensagem <i class="fas fa-paper-plane"></i>';
-            btn.disabled = false;
-            sucessoFormulário.classList.add('mostrar');
-            setTimeout(() => sucessoFormulário.classList.remove('mostrar'), 4000);
-        }, 1400);
+        // Botão de envio — estado de carregando
+        const botaoEnviar = formulárioContato.querySelector('button[type="submit"]');
+        const textoBotaoOriginal = botaoEnviar.textContent;
+        botaoEnviar.disabled = true;
+        botaoEnviar.textContent = 'Enviando...';
+
+        try {
+            await fetch('https://gfcdev.app.n8n.cloud/webhook/a3d853c1-0a54-43d8-af58-9cb3741fd56d', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, email, mensagem })
+            });
+
+            // Esconde o formulário e mostra mensagem de sucesso
+            formulárioContato.style.display = 'none';
+            const sucessoFormulário = document.getElementById('sucessoFormulário');
+            if (sucessoFormulário) {
+                sucessoFormulário.style.display = 'flex';
+            }
+
+        } catch (erro) {
+            botaoEnviar.disabled = false;
+            botaoEnviar.textContent = textoBotaoOriginal;
+            alert('Erro ao enviar. Tente novamente.');
+        }
     });
-}
-
-function enviarWhatsapp() {
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    // Construção da mensagem para WhatsApp
-    const whatsappMessage = `Fala ai Gui beleza !? ` + `\n\n- Meu nome é: ${nome}` + `\n- Meu email é: ${email}` + `\n- Projeto: ${mensagem}` + `\n\nVamos conversar sobre este projeto ?`;
-
-    // Open WhatsApp with the pre-filled message
-    window.open(`https://wa.me/5511954607586?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
 }
 
 // ---- SMOOTH SCROLL for anchor links ----
@@ -171,7 +178,7 @@ if (subtítuloHerói) {
         let velocidade = estáDeletando ? 50 : 80;
 
         if (!estáDeletando && índiceCaractere === atual.length) {
-            velocidade = 2000; // pausa no fim
+            velocidade = 2000;
             estáDeletando = true;
         } else if (estáDeletando && índiceCaractere === 0) {
             estáDeletando = false;
@@ -182,7 +189,6 @@ if (subtítuloHerói) {
         timeoutDigitação = setTimeout(digitar, velocidade);
     }
 
-    // Iniciar após um pequeno atraso
     setTimeout(digitar, 1200);
 }
 
