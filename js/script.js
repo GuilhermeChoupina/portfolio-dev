@@ -78,85 +78,72 @@ const observerHabilidades = new IntersectionObserver((entries) => {
 
 preenchimentosHabilidades.forEach(fill => observerHabilidades.observe(fill));
 
-// ---- FORMULÁRIO CONTATO ----
+// ---- FORMULÁRIO CONTATO (UNIFICADO E CORRIGIDO) ----
 const formulárioContato = document.getElementById('formulárioContato');
+const sucessoFormulário = document.getElementById('sucessoFormulário');
 
 if (formulárioContato) {
     formulárioContato.addEventListener('submit', async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Impede o recarregamento da página
 
+        // 1. Executa a validação nativa do HTML (Verifica o @ do e-mail e os campos required)
+        if (!formulárioContato.checkValidity()) {
+            formulárioContato.reportValidity(); // Mostra o balãozinho nativo do navegador se houver erro
+
+            // Aplica o efeito visual de erro (shake) apenas nos campos inválidos atuais
+            [document.getElementById('nome'), document.getElementById('email'), document.getElementById('mensagem')].forEach(field => {
+                if (!field.checkValidity()) {
+                    field.style.borderColor = '#C24D2C';
+                    field.style.animation = 'shake 0.4s ease';
+                    setTimeout(() => {
+                        field.style.animation = '';
+                        field.style.borderColor = '';
+                    }, 500);
+                }
+            });
+            return; // Interrompe o envio se não for válido
+        }
+
+        // 2. Se o formulário for 100% válido, recolhe os valores dos campos
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
         const mensagem = document.getElementById('mensagem').value.trim();
-        const aceiteTermos = document.getElementById('aceite-termos');
 
-        let válido = true;
-
-        [document.getElementById('nome'), document.getElementById('email'), document.getElementById('mensagem')].forEach(field => {
-            if (!field.value.trim()) {
-                válido = false;
-                field.style.borderColor = '#C24D2C';
-                field.style.animation = 'shake 0.4s ease';
-                setTimeout(() => {
-                    field.style.animation = '';
-                    field.style.borderColor = '';
-                }, 500);
-            }
-        });
-
-        if (!aceiteTermos.checked) {
-            válido = false;
-            aceiteTermos.style.outline = '2px solid #C24D2C';
-            setTimeout(() => aceiteTermos.style.outline = '', 500);
-        }
-
-        if (!válido) return;
-
-        // Botão de envio — estado de carregando
+        // 3. Modifica o estado do botão para indicar carregamento
         const botaoEnviar = formulárioContato.querySelector('button[type="submit"]');
         const textoBotaoOriginal = botaoEnviar.textContent;
         botaoEnviar.disabled = true;
         botaoEnviar.textContent = 'Enviando...';
 
         try {
+            // 4. Faz a requisição POST para o seu webhook do n8n
             await fetch('https://gfcdev.app.n8n.cloud/webhook/a3d853c1-0a54-43d8-af58-9cb3741fd56d', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nome, "e-mail": email, mensagem })
             });
 
-            // Esconde o formulário e mostra mensagem de sucesso
-            formulárioContato.style.display = 'none';
-            const sucessoFormulário = document.getElementById('sucessoFormulário');
+            // 5. Se o envio der certo, limpa/esconde o formulário e ativa a mensagem de sucesso
+            formulárioContato.reset();
+
+            // Esconde os elementos visuais internos do formulário
+            formulárioContato.querySelectorAll('.grupo-formulário, .botão-principal, .bloco-aceite')
+                .forEach(el => el.style.display = 'none');
+
+            // Exibe a mensagem de sucesso de forma consistente
             if (sucessoFormulário) {
                 sucessoFormulário.style.display = 'flex';
+                sucessoFormulário.classList.add('ativo');
             }
 
         } catch (erro) {
+            // 6. Trata falhas na conexão ou na API do webhook
             botaoEnviar.disabled = false;
             botaoEnviar.textContent = textoBotaoOriginal;
-            alert('Erro ao enviar. Tente novamente.');
+            alert('Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
         }
     });
 }
-
-const form = document.getElementById('formulárioContato');
-const sucesso = document.getElementById('sucessoFormulário');
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-
-    // Esconde o formulário e mostra o sucesso
-    form.querySelectorAll('.grupo-formulário, .botão-principal, .bloco-aceite')
-        .forEach(el => el.style.display = 'none');
-
-    sucesso.classList.add('ativo');
-});
 
 // ---- SMOOTH SCROLL for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -187,7 +174,7 @@ if (subtítuloHerói) {
 
         if (estáDeletando) {
             subtítuloHerói.textContent = atual.substring(0, índiceCaractere - 1);
-            índiceCaractere--;
+            indiceCaractere--;
         } else {
             subtítuloHerói.textContent = atual.substring(0, índiceCaractere + 1);
             índiceCaractere++;
