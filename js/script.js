@@ -120,7 +120,7 @@ if (formulárioContato) {
             await fetch('https://gfcdev.app.n8n.cloud/webhook/a3d853c1-0a54-43d8-af58-9cb3741fd56d', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, "e-mail": email, mensagem })
+                body: JSON.stringify({ nome, email, mensagem })
             });
 
             // 5. Se o envio der certo, limpa/esconde o formulário e ativa a mensagem de sucesso
