@@ -8,11 +8,16 @@
 
     <link rel="shortcut icon" href="assets/gf.png" type="image/x-icon">
 
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
 
+    <!-- Devicons -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Font Awesome (estava faltando — causava formulário em branco) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link rel="stylesheet" href="estilo/styles.css" />
 </head>
@@ -30,7 +35,7 @@
             <li><a href="#contato">Contato</a></li>
         </ul>
         <a href="#contato" class="botão-navegação">Vamos Conversar</a>
-        <button class="alternar-menu" id="alternarMenu">
+        <button class="alternar-menu" id="alternarMenu" aria-label="Abrir menu">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -46,6 +51,7 @@
         </ul>
     </div>
 
+    <!-- ===== HERÓI ===== -->
     <section class="herói" id="início">
         <div class="formas-fundo-herói">
             <div class="forma forma-1"></div>
@@ -68,20 +74,20 @@
             </div>
         </div>
         <div class="social-herói reveal delay-5">
-            <a href="https://github.com/guilhermechoupina" target="_blank"><img src="assets/github.png"
-                    alt="github"></a>
-            <a href="https://linkedin.com" target="_blank"><img src="assets/linkedin.png" alt="linkedin"></a>
+            <a href="https://github.com/guilhermechoupina" target="_blank" rel="noopener noreferrer">
+                <img src="assets/github.png" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/linkedin.png" alt="LinkedIn">
+            </a>
         </div>
     </section>
 
+    <!-- ===== SOBRE ===== -->
     <section class="sobre" id="sobre">
         <div class="contêiner sobre-grade">
             <div class="sobre-imagem reveal-left">
-                <div class="bolha-imagem">
-                    <div class="espaço-reservado-imagem">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                </div>
+                <div class="bolha-imagem"></div>
                 <div class="sobre-cartão">
                     <span class="número-cartão">1°</span>
                     <span class="rótulo-cartão">Semestre em<br />Ciências da Computação</span>
@@ -90,18 +96,14 @@
             <div class="sobre-texto reveal-right">
                 <span class="section-tag">Sobre Mim</span>
                 <h2 class="section-title">Desenvolvedor Full-Stack em formação</h2>
-                <p>
-                    Estudante de Ciências da Computação, com foco em criar interfaces
-                    limpas e funcionais.
-                </p>
-                <p>
-                    Desenvolvo projetos Web como landing pages, catálogos,portfólios e sistemas simples.
-                </p>
+                <p>Estudante de Ciências da Computação, com foco em criar interfaces limpas e funcionais.</p>
+                <p>Desenvolvo projetos Web como landing pages, catálogos, portfólios e sistemas simples.</p>
                 <p>Futuro desenvolvedor Mobile.</p>
             </div>
         </div>
     </section>
 
+    <!-- ===== HABILIDADES ===== -->
     <section class="serviços" id="habilidades">
         <div class="contêiner">
             <span class="section-tag center reveal">O que eu faço</span>
@@ -111,25 +113,27 @@
             <div class="grade-serviços">
                 <div class="cartão-serviço reveal delay-1">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-code"><img src="assets/img-skills/biblioteca.png"
-                                    alt="React Native"></i>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/biblioteca.png" alt="React Native">
                         </div>
                         <h3>React Native</h3>
                         <p>Desenvolvimento de aplicativos mobile nativos para Android e iOS.</p>
                     </div>
                 </div>
-                <div class="cartão-serviço reveal delay-3">
+                <div class="cartão-serviço reveal delay-2">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-puzzle-piece"><img
-                                    src="assets/img-skills/github-preto.png" alt="Git&GitHub"></i></div>
-                        <h3>Git&GitHub</h3>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/github-preto.png" alt="Git & GitHub">
+                        </div>
+                        <h3>Git &amp; GitHub</h3>
                         <p>Versionamento inteligente de código e colaboração segura em repositórios profissionais.</p>
                     </div>
                 </div>
-                <div class="cartão-serviço reveal delay-4">
+                <div class="cartão-serviço reveal delay-3">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-users"></i><img src="assets/img-skills/css-3.png"
-                                alt="CSS"></div>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/css-3.png" alt="CSS">
+                        </div>
                         <h3>CSS</h3>
                         <p>Estilização moderna, layouts responsivos e design focado na experiência visual do usuário.
                         </p>
@@ -137,28 +141,29 @@
                 </div>
                 <div class="cartão-serviço reveal delay-4">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-users"></i><img src="assets/img-skills/html-5.png"
-                                alt="HTML"></div>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/html-5.png" alt="HTML">
+                        </div>
                         <h3>HTML</h3>
                         <p>Estruturação limpa e semântica de conteúdo para garantir acessibilidade e uma base sólida na
-                            web.
-                        </p>
+                            web.</p>
                     </div>
                 </div>
-                <div class="cartão-serviço reveal delay-4">
+                <div class="cartão-serviço reveal delay-5">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-users"></i><img src="assets/img-skills/java.png"
-                                alt="Java"></div>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/java.png" alt="Java">
+                        </div>
                         <h3>Java</h3>
                         <p>Construção de sistemas simples no backend, aplicando lógica de programação orientada a
-                            objetos.
-                        </p>
+                            objetos.</p>
                     </div>
                 </div>
-                <div class="cartão-serviço reveal delay-4">
+                <div class="cartão-serviço reveal delay-5">
                     <div class="cartao-conteudo">
-                        <div class="ícone-serviço"><i class="fas fa-users"></i><img src="assets/img-skills/js.png"
-                                alt="JavaScript"></div>
+                        <div class="ícone-serviço">
+                            <img src="assets/img-skills/js.png" alt="JavaScript">
+                        </div>
                         <h3>JavaScript</h3>
                         <p>Criação de dinamismo, manipulação de dados e interatividade em tempo real no front-end.</p>
                     </div>
@@ -167,16 +172,15 @@
         </div>
     </section>
 
+    <!-- ===== FORMAÇÃO ===== -->
     <section class="formação" id="formação">
         <div class="contêiner">
             <span class="section-tag center reveal">Trajetória</span>
             <h2 class="section-title center reveal delay-1">Ensino Superior &amp; Cursos</h2>
-
             <div class="linha-do-tempo">
-
                 <div class="item-linha-do-tempo reveal">
                     <div class="ponto-linha-do-tempo ativo"></div>
-                    <div class="cartão-linha-do-tempo destacado">
+                    <div class="cartão-linha-do-tempo">
                         <span class="distintivo-linha-do-tempo">Cursando</span>
                         <span class="ano-linha-do-tempo">2026 – 2030</span>
                         <h3>Bacharelado em Ciências da Computação</h3>
@@ -186,7 +190,6 @@
                         <p>Formação técnica completa em desenvolvimento de software e sistemas.</p>
                     </div>
                 </div>
-
                 <div class="item-linha-do-tempo reveal delay-1">
                     <div class="ponto-linha-do-tempo"></div>
                     <div class="cartão-linha-do-tempo">
@@ -198,7 +201,6 @@
                         <p>Desenvolvimento Front-End completo, do básico ao intermediário.</p>
                     </div>
                 </div>
-
                 <div class="item-linha-do-tempo reveal delay-2">
                     <div class="ponto-linha-do-tempo"></div>
                     <div class="cartão-linha-do-tempo">
@@ -210,7 +212,6 @@
                         <p>Fundamentos de algoritmos e raciocínio computacional.</p>
                     </div>
                 </div>
-
                 <div class="item-linha-do-tempo reveal delay-3">
                     <div class="ponto-linha-do-tempo"></div>
                     <div class="cartão-linha-do-tempo">
@@ -222,26 +223,24 @@
                         <p>Base sólida em performance humana, comunicação e gestão de resultados.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- ===== PROJETOS ===== -->
     <section class="portfólio" id="projetos">
         <div class="contêiner">
             <span class="section-tag center reveal">Trabalhos</span>
             <h2 class="section-title center reveal delay-1">Meus Projetos</h2>
             <p class="section-sub center reveal delay-2">Explore os projetos desenvolvidos durante minha jornada de
                 aprendizado.</p>
-
             <div class="grade-portfólio">
-
                 <div class="cartão-portfólio reveal delay-3">
                     <div class="imagem-portfólio flor">
-                        <i class="fas fa-spa"><img src="assets/img-proj/florearoma.png" alt="Flor & Aroma"></i>
+                        <img src="assets/img-proj/florearoma.png" alt="Flor & Aroma">
                         <div class="sobreposição-portfólio">
                             <a href="https://guilhermechoupina.github.io/projeto-florearoma/" target="_blank"
-                                class="botão-visualizar">
+                                rel="noopener noreferrer" class="botão-visualizar">
                                 <i class="fas fa-external-link-alt"></i> Ver Projeto
                             </a>
                         </div>
@@ -249,26 +248,26 @@
                     <div class="informação-portfólio">
                         <span class="etiqueta-portfólio">Landing Page</span>
                         <h3>Flor &amp; Aroma</h3>
-                        <p>Catálogo desenvolvido para a loja virtual Flor & Aroma.</p>
+                        <p>Catálogo desenvolvido para a loja virtual Flor &amp; Aroma.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- ===== CONTATO ===== -->
     <section class="contato" id="contato">
         <div class="contêiner grade-contato">
             <div class="texto-contato reveal-left">
-                <h2 class="section-title">Entre em Contato</h2>
+                <h2 class="section-title titulo-claro">Entre em Contato</h2>
                 <p>
                     Tem uma pergunta ou quer saber mais sobre meus projetos? Envie uma mensagem!
                     Responderei o mais breve possível.
                 </p>
                 <p>
-                    Você também pode me encontrar nas redes sociais ou enviar um <a
-                        href="https://wa.me/5511954607586?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20!"
-                        target="_blank" class="whatsapp">WhatsApp</a> direto.
+                    Você também pode me encontrar nas redes sociais ou enviar um
+                    <a href="https://wa.me/5511954607586?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20!"
+                        target="_blank" rel="noopener noreferrer" class="whatsapp">WhatsApp</a> direto.
                 </p>
             </div>
             <div class="formulário-contato reveal-right">
@@ -286,40 +285,46 @@
                         <textarea id="mensagem" rows="5" placeholder="Conte-me brevemente sobre o que você deseja..."
                             required></textarea>
                     </div>
-                    <button type="submit" class="botão-principal completo">Enviar Mensagem <i
-                            class="fas fa-paper-plane"></i></button>
-                    <div class="sucesso-formulário" id="sucessoFormulário">
-                        <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso!
-                    </div>
                     <div class="bloco-aceite">
-                        <input type="checkbox" id="aceite-termos" required/>
+                        <input type="checkbox" id="aceite-termos" required />
                         <label for="aceite-termos">
                             Li e concordo com as <strong>Diretrizes de Trabalho</strong> acima e estou ciente de todos
                             os termos descritos.
                         </label>
+                    </div>
+                    <button type="submit" class="botão-principal completo">
+                        Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="sucesso-formulário" id="sucessoFormulário">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Mensagem enviada com sucesso!</p>
+                        <span>Em breve entrarei em contato com você.</span>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- ===== RODAPÉ ===== -->
     <footer class="rodapé">
         <div class="contêiner interno-rodapé">
             <div class="logo-rodapé">GF<span class="ponto">.</span></div>
-            <p>&copy; 2026 Guilherme Fernandes Choupina - Desenvolvedor Full Stack.</p>
-
-            <a href="pages/termos.html" class="link-termos-footer">Diretrizes & Termos de Trabalho</a>
+            <p>&copy; 2026 Guilherme Fernandes Choupina — Desenvolvedor Full Stack.</p>
+            <a href="pages/termos.html" class="link-termos-footer">Diretrizes &amp; Termos de Trabalho</a>
             <div class="social-rodapé">
-                <a href="https://github.com/guilhermechoupina" target="_blank"><i class="fab fa-github"></i><img
-                        src="assets/github.png" alt="GitHub"></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i><img
-                        src="assets/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/guilhermechoupina" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/github.png" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/linkedin.png" alt="LinkedIn">
+                </a>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/5511954607586?text=Olá!%20Gostaria%20de%20mais%20informações." class="btn-whatsapp"
-        target="_blank" rel="noopener noreferrer">
+    <!-- Botão WhatsApp flutuante -->
+    <a href="https://wa.me/5511954607586?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+        class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
         <img src="assets/whatsapp-tela.png" alt="Fale conosco no WhatsApp">
     </a>
 

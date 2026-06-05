@@ -122,7 +122,7 @@ if (formulárioContato) {
             await fetch('https://gfcdev.app.n8n.cloud/webhook/a3d853c1-0a54-43d8-af58-9cb3741fd56d', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, email, mensagem })
+                body: JSON.stringify({ nome, "e-mail": email, mensagem })
             });
 
             // Esconde o formulário e mostra mensagem de sucesso
@@ -139,6 +139,24 @@ if (formulárioContato) {
         }
     });
 }
+
+const form = document.getElementById('formulárioContato');
+const sucesso = document.getElementById('sucessoFormulário');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // Esconde o formulário e mostra o sucesso
+    form.querySelectorAll('.grupo-formulário, .botão-principal, .bloco-aceite')
+        .forEach(el => el.style.display = 'none');
+
+    sucesso.classList.add('ativo');
+});
 
 // ---- SMOOTH SCROLL for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

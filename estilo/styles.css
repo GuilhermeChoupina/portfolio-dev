@@ -49,11 +49,20 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
 
 .contêiner {
   width: min(1120px, 100%);
   margin: 0 auto;
+}
+
+/* ── Utilitário de centralização (estava no HTML mas sem CSS) ── */
+.center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-tag {
@@ -78,6 +87,11 @@ button {
   margin-bottom: 18px;
 }
 
+/* Variante clara para seções com fundo escuro (ex: Contato) */
+.titulo-claro {
+  color: #F4F4F4;
+}
+
 .section-sub {
   max-width: 640px;
   color: var(--text-muted);
@@ -85,6 +99,7 @@ button {
   text-align: center;
 }
 
+/* ===== NAVEGAÇÃO ===== */
 .navegação {
   position: fixed;
   top: 0;
@@ -177,6 +192,7 @@ button {
   font-weight: 600;
 }
 
+/* ===== HERÓI ===== */
 .herói {
   min-height: 100vh;
   padding: 120px 24px 80px;
@@ -282,6 +298,7 @@ button {
   background: var(--accent1);
   color: var(--text-dark);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  border: none;
 }
 
 .botão-principal:hover {
@@ -329,6 +346,7 @@ button {
   transform: translateX(-4px);
 }
 
+/* ===== SOBRE ===== */
 .sobre,
 .formação,
 .portfólio,
@@ -391,6 +409,7 @@ button {
   margin-bottom: 18px;
 }
 
+/* ===== HABILIDADES ===== */
 .barras-habilidades {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -439,6 +458,7 @@ button {
   --hover-y: -12px;
 }
 
+/* ===== SERVIÇOS ===== */
 .serviços {
   background: #F4F5F7;
 }
@@ -461,6 +481,7 @@ button {
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: block;
+  text-align: center;
 }
 
 .cartao-conteudo:hover {
@@ -474,25 +495,28 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px;
+  padding: 10px 0;
   margin: 0 auto 20px;
   font-size: 1.35rem;
 }
 
+.ícone-serviço img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .cartão-serviço h3 {
-  margin: 15px 0px;
+  margin: 15px 0;
   color: var(--text-dark);
-  display: flex;
-  justify-content: center;
 }
 
 .cartão-serviço p {
   color: var(--text-muted);
   line-height: 1.75;
-  display: flex;
-  justify-content: center;
 }
 
+/* ===== FORMAÇÃO ===== */
 .formação {
   background: #fff;
 }
@@ -540,6 +564,7 @@ button {
   padding: 28px 30px;
   border: 1px solid rgba(26, 39, 58, 0.08);
   transition: var(--transition);
+  position: relative;
 }
 
 .distintivo-linha-do-tempo {
@@ -584,6 +609,7 @@ button {
   line-height: 1.75;
 }
 
+/* ===== PORTFÓLIO ===== */
 .portfólio {
   background: #F4F5F7;
 }
@@ -601,7 +627,7 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   transition: var(--transition);
-  margin: 30px 0px;
+  margin: 30px 0;
 }
 
 .cartão-portfólio:hover {
@@ -614,6 +640,14 @@ button {
   justify-content: center;
   position: relative;
   color: rgba(255, 255, 255, 0.9);
+  min-height: auto;
+  overflow: hidden;
+}
+
+.imagem-portfólio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .imagem-portfólio.android {
@@ -677,6 +711,7 @@ button {
   margin-bottom: 16px;
 }
 
+/* ===== CONTATO ===== */
 .contato {
   background: var(--bg);
   padding: 80px 0;
@@ -734,13 +769,13 @@ button {
   padding: 14px 16px;
   color: #fff;
   outline: none;
+  font: 400 14px 'DM Sans', sans-serif;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .grupo-formulário input::placeholder,
 .grupo-formulário textarea::placeholder {
   color: rgba(255, 255, 255, 0.45);
-  font: 400 14px 'DM Sans', sans-serif;
 }
 
 .grupo-formulário input:focus,
@@ -751,19 +786,111 @@ button {
 
 .botão-principal.completo {
   width: 100%;
+  margin-top: 8px;
+  border: none;
 }
 
+/* ── Mensagem de sucesso ── */
 .sucesso-formulário {
   display: none;
-  margin-top: 18px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.sucesso-formulário i {
+  font-size: 3rem;
   color: var(--accent1);
+}
+
+.sucesso-formulário p {
+  color: #fff;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
-.sucesso-formulário.mostrar {
-  display: block;
+.sucesso-formulário span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
 }
 
+.sucesso-formulário.ativo {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Checkbox de aceite ── */
+.bloco-aceite {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px 0;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+}
+
+.bloco-aceite input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.bloco-aceite input[type="checkbox"]:checked {
+  background: #F5C842;
+  border-color: #F5C842;
+}
+
+.bloco-aceite input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.bloco-aceite label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.bloco-aceite label strong {
+  color: #fff;
+}
+
+/* ===== RODAPÉ ===== */
 .rodapé {
   background: #121E32;
   padding: 34px 0;
@@ -799,8 +926,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  transition: transform 0.2s;
 }
 
 .social-rodapé a:hover {
@@ -815,9 +943,32 @@ button {
 }
 
 .link-termos-footer:hover {
-  color: #e4a62c;
+  color: var(--accent1);
 }
 
+/* ===== BOTÃO WHATSAPP FLUTUANTE ===== */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn-whatsapp img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 8px 15px rgba(37, 211, 102, 0.4));
+}
+
+/* ===== ANIMAÇÕES DE REVEAL ===== */
 .reveal,
 .reveal-left,
 .reveal-right {
@@ -861,85 +1012,10 @@ button {
 }
 
 .delay-5 {
-  transition-delay: 0.4s;
+  transition-delay: 0.40s;
 }
 
-.btn-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  z-index: 9999;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-whatsapp img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.btn-whatsapp:hover {
-  transform: scale(1.1) translateY(-3px);
-  filter: drop-shadow(0 8px 15px rgba(37, 211, 102, 0.4));
-}
-
-.bloco-aceite {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 32px 0 0 0;
-  padding: 20px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  cursor: pointer;
-}
-
-.bloco-aceite input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.bloco-aceite input[type="checkbox"]:checked {
-  background: #F5C842;
-  border-color: #F5C842;
-}
-
-.bloco-aceite input[type="checkbox"]:checked::after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid #000;
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
-
-.bloco-aceite label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
-  line-height: 1.5;
-}
-
-.bloco-aceite label strong {
-  color: #fff;
-}
-
+/* ===== ANIMAÇÃO FLOAT ===== */
 @keyframes float {
 
   0%,
@@ -952,16 +1028,12 @@ button {
   }
 }
 
-/* ===== RESPONSIVE - Tablets (768px a 1024px) ===== */
+/* ===== RESPONSIVE — Tablets (768px–1024px) ===== */
 @media (max-width: 1024px) {
 
   .sobre-grade,
   .grade-contato {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .linha-do-tempo {
     gap: 40px;
   }
 
@@ -982,7 +1054,7 @@ button {
   }
 }
 
-/* ===== RESPONSIVE - Mobile (até 768px) ===== */
+/* ===== RESPONSIVE — Mobile (até 768px) ===== */
 @media (max-width: 768px) {
   .navegação {
     padding: 14px 16px;
@@ -1029,10 +1101,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .cartão-serviço {
-    padding: 24px 20px;
-  }
-
   .grade-contato {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1043,9 +1111,6 @@ button {
   }
 
   .sobre,
-  .formacao,
-  .portfolio,
-  .servicos,
   .formação,
   .portfólio,
   .serviços {
@@ -1088,7 +1153,7 @@ button {
   }
 }
 
-/* ===== RESPONSIVE - Mobile Pequeno (até 480px) ===== */
+/* ===== RESPONSIVE — Mobile Pequeno (até 480px) ===== */
 @media (max-width: 480px) {
   .navegação {
     padding: 12px 14px;
@@ -1173,20 +1238,8 @@ button {
     padding: 12px 16px;
   }
 
-  .número-cartão {
-    font-size: 1.5rem;
-  }
-
-  .rótulo-cartão {
-    font-size: 0.7rem;
-  }
-
   .grade-serviços {
     gap: 16px;
-  }
-
-  .cartão-serviço {
-    padding: 20px 16px;
   }
 
   .ícone-serviço {
@@ -1210,10 +1263,6 @@ button {
 
   .cartão-portfólio {
     margin: 16px 0;
-  }
-
-  .imagem-portfólio {
-    height: auto;
   }
 
   .informação-portfólio {
@@ -1285,24 +1334,6 @@ button {
     font-size: 0.9rem;
   }
 
-  .item-contato {
-    gap: 12px;
-  }
-
-  .ícone-contato {
-    min-width: 40px;
-    min-height: 40px;
-    font-size: 0.9rem;
-  }
-
-  .item-contato span {
-    font-size: 0.7rem;
-  }
-
-  .item-contato a {
-    font-size: 0.9rem;
-  }
-
   .formulário-contato {
     padding: 20px 16px;
     margin: 20px 0;
@@ -1349,9 +1380,6 @@ button {
   }
 
   .sobre,
-  .formacao,
-  .portfolio,
-  .servicos,
   .formação,
   .portfólio,
   .serviços {
