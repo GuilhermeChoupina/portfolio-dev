@@ -410,52 +410,10 @@ button {
 }
 
 /* ===== HABILIDADES ===== */
-.barras-habilidades {
+.grade-serviços {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 40px 20px;
-  margin-top: 40px;
-  padding: 20px 10px;
-  justify-items: center;
-  align-items: center;
-}
-
-.tech-item {
-  font-size: 3.5rem;
-  color: var(--text-dark);
-  opacity: 0.85;
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease, opacity 0.3s ease;
-  cursor: pointer;
-}
-
-.devicon-html5-plain {
-  color: #E34F26;
-}
-
-.devicon-css3-plain {
-  color: #1572B6;
-}
-
-.devicon-javascript-plain {
-  color: #d4bf1d;
-}
-
-.devicon-react-original {
-  color: #1082A7;
-}
-
-.devicon-react-plain {
-  color: #26D9FD;
-}
-
-.tech-item:hover {
-  color: var(--accent2);
-  opacity: 1;
-  transform: scale(1.25) translateY(var(--hover-y, 0px));
-}
-
-.item-subir:hover {
-  --hover-y: -12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 /* ===== SERVIÇOS ===== */

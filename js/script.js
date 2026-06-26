@@ -115,33 +115,17 @@ if (formulárioContato) {
         botaoEnviar.disabled = true;
         botaoEnviar.textContent = 'Enviando...';
 
-        try {
-            // 4. Faz a requisição POST para o seu webhook do n8n
-            await fetch('https://gfcdev.app.n8n.cloud/webhook/a3d853c1-0a54-43d8-af58-9cb3741fd56d', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nome, email, mensagem })
-            });
+        // 4. Redireciona diretamente para o WhatsApp com mensagem pré-preenchida
+        const textoWhatsApp = `Olá, meu nome é ${nome}. Email: ${email}. Mensagem: ${mensagem}`;
+        const whatsappUrl = `https://wa.me/5511954607586?text=${encodeURIComponent(textoWhatsApp)}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
-            // 5. Se o envio der certo, limpa/esconde o formulário e ativa a mensagem de sucesso
-            formulárioContato.reset();
-
-            // Esconde os elementos visuais internos do formulário
-            formulárioContato.querySelectorAll('.grupo-formulário, .botão-principal, .bloco-aceite')
-                .forEach(el => el.style.display = 'none');
-
-            // Exibe a mensagem de sucesso de forma consistente
-            if (sucessoFormulário) {
-                sucessoFormulário.style.display = 'flex';
-                sucessoFormulário.classList.add('ativo');
-            }
-
-        } catch (erro) {
-            // 6. Trata falhas na conexão ou na API do webhook
+        // 5. Retorna o estado do botão e limpa o formulário após abrir o WhatsApp
+        setTimeout(() => {
             botaoEnviar.disabled = false;
             botaoEnviar.textContent = textoBotaoOriginal;
-            alert('Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
-        }
+        }, 800);
+        formulárioContato.reset();
     });
 }
 
